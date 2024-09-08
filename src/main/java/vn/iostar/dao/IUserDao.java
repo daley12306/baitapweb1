@@ -8,8 +8,18 @@ public interface IUserDao {
 	
 	List<UserModel> findAll();
 	
-	UserModel findByID();
+	UserModel findByID(int id);
+	
+	UserModel findByUsername(String username);
 	
 	void insert(UserModel user);
 
+	UserModel login(String username, String password);
+	
+	boolean register(String username, String email, String password, String fullname, String image);
+	
+	boolean checkExistUsername(String username);
+	
+	boolean checkExistEmail(String email);
+	
 }

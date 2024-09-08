@@ -26,24 +26,18 @@ public class DBConnectSQL {
 			
 			// Check if the connection is successful
 			if (conn != null) {
-				DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
-				System.out.println("Driver name: " + dm.getDriverName());
-				System.out.println("Driver version: " + dm.getDriverVersion());
-				System.out.println("Product name: " + dm.getDatabaseProductName());
-				System.out.println("Product version: " + dm.getDatabaseProductVersion());
+//				DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
+//				System.out.println("Driver name: " + dm.getDriverName());
+//				System.out.println("Driver version: " + dm.getDriverVersion());
+//				System.out.println("Product name: " + dm.getDatabaseProductName());
+//				System.out.println("Product version: " + dm.getDatabaseProductVersion());
+			
+				return conn;
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
-		} finally {
-			try {
-				if (conn != null && !conn.isClosed()) {
-					conn.close();
-				}
-			} catch (SQLException ex) {
-				ex.printStackTrace();
-			}
 		}
-		return conn;
+		return null;
 	}
 	
 	public static void main(String[] args) {
