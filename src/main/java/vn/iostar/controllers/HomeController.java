@@ -29,7 +29,7 @@ public class HomeController extends HttpServlet{
 		
 		
 		PrintWriter printW = resp.getWriter();
-		printW.println(holot + " " + ten);
+		printW.print("Hello World!");
 		printW.close();
 
 	}
